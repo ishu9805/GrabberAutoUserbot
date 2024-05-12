@@ -26,7 +26,7 @@ async def database(bot, message):
         copied_string = message.text.split("Copy-String: ")[1].strip()
         # Send the copied string to the target group
         sent  = await message.reply(copied_string)
-        await asyncio.sleep(2) 
+        await asyncio.sleep(5) 
         await bot.delete_messages(message.chat.id, sent.id)
 
 
@@ -35,14 +35,14 @@ async def huntbot(bot, message):
     # Reply to the bot with the desired response
     sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
     await asyncio.sleep(2)  # Wait for 2 seconds
-    await app.delete_messages(message.chat.id, message.message_id)
+    await bot.delete_messages(message.chat.id, sent_message.id)
 
 @app.on_message(filters.photo & filters.group & filters.user(loot_bot))
 async def lootbot(bot, message):
     # Reply to the bot with the desired response
     sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
     await asyncio.sleep(2)  # Wait for 2 seconds
-    await app.delete_messages(message.chat.id, message.message_id)
+    await bot.delete_messages(message.chat.id, sent_message.id)
 
 
 @app.on_message(filters.photo & filters.private & filters.user(grab_bot))
@@ -50,7 +50,7 @@ async def grabbot(bot, message):
     # Reply to the bot with the desired response
     sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
     await asyncio.sleep(2)  # Wait for 2 seconds
-    await app.delete_messages(message.chat.id, sent_message.message_id)
+    await bot.delete_messages(message.chat.id, sent_message.id)
 
 
 @app.on_message(filters.photo & filters.private & filters.user(catch_bot))
@@ -58,7 +58,7 @@ async def catchbot(bot, message):
     # Reply to the bot with the desired response
     sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
     await asyncio.sleep(2)  # Wait for 2 seconds
-    await app.delete_messages(message.chat.id, sent_message.message_id)
+    await bot.delete_messages(message.chat.id, sent_message.id)
 
 
 @app.on_message(filters.photo & filters.private & filters.user(catcher_bot))
@@ -66,7 +66,7 @@ async def catcherbot(bot, message):
     # Reply to the bot with the desired response
     sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
     await asyncio.sleep(2)  # Wait for 2 seconds
-    await app.delete_messages(message.chat.id, sent_message.message_id)
+    await bot.delete_messages(message.chat.id, sent_message.id)
 
 
 app.run()
