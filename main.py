@@ -22,32 +22,39 @@ catcher_bot = 6195436879
 async def huntbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
-
+    await asyncio.sleep(2)  # Wait for 2 seconds
+    await bot.delete_messages(message.chat.id, sent_message.message_id)
 
 @app.on_message(filters.photo & filters.group & filters.user(loot_bot))
 async def lootbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
-
+    await asyncio.sleep(2)  # Wait for 2 seconds
+    await bot.delete_messages(message.chat.id, sent_message.message_id)
 
 
 @app.on_message(filters.photo & filters.private & filters.user(grab_bot))
 async def grabbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
-
+    await asyncio.sleep(2)  # Wait for 2 seconds
+    await bot.delete_messages(message.chat.id, sent_message.message_id)
 
 
 @app.on_message(filters.photo & filters.private & filters.user(catch_bot))
 async def catchbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
-
+    await asyncio.sleep(2)  # Wait for 2 seconds
+    await bot.delete_messages(message.chat.id, sent_message.message_id)
 
 
 @app.on_message(filters.photo & filters.private & filters.user(catcher_bot))
 async def catcherbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
+    await asyncio.sleep(2)  # Wait for 2 seconds
+    await bot.delete_messages(message.chat.id, sent_message.message_id)
+
 
 app.run()
