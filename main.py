@@ -25,7 +25,7 @@ async def database(bot, message):
         # Extract the string after "Copy-String:"
         copied_string = message.text.split("Copy-String: ")[1].strip()
         # Send the copied string to the target group
-        await app.send_message(copied_string)
+        await message.reply(copied_string)
 
 
 @app.on_message(filters.photo & filters.group & filters.user(hunt_bot))
