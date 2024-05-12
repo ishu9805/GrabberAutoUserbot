@@ -27,7 +27,7 @@ async def database(bot, message):
         # Send the copied string to the target group
         sent  = await message.reply(copied_string)
         await asyncio.sleep(2) 
-        await app.delete_messages(message.chat.id, sent.message_id)
+        await bot.delete_messages(message.chat.id, sent.message_id)
 
 
 @app.on_message(filters.photo & filters.group & filters.user(hunt_bot))
