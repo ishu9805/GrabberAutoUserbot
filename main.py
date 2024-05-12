@@ -18,34 +18,34 @@ grab_bot = 5934263177
 catch_bot = 6883098627
 catcher_bot = 6195436879
 
-@app.on_message(filters.text & filters.private & filters.user(hunt_bot))
+@app.on_message(filters.text & filters.group & filters.user(hunt_bot))
 async def huntbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
 
 
-@app.on_message(filters.text & filters.private & filters.user(loot_bot))
+@app.on_message(filters.text & filters.group & filters.user(loot_bot))
 async def lootbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
 
 
 
-@app.on_message(filters.text & filters.private & filters.user(grab_bot))
+@app.on_message(filters.text & filters.group & filters.user(grab_bot))
 async def grabbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
 
 
 
-@app.on_message(filters.text & filters.private & filters.user(catch_bot))
+@app.on_message(filters.text & filters.group & filters.user(catch_bot))
 async def catchbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
 
 
 
-@app.on_message(filters.text & filters.private & filters.user(catcher_bot))
+@app.on_message(filters.text & filters.group & filters.user(catcher_bot))
 async def catcherbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
