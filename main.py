@@ -50,4 +50,4 @@ async def catcherbot(bot, message):
     # Reply to the bot with the desired response
     await message.reply("/waifu@collect_waifu_cheats_bot")
 
-app.start()
+app.run()
