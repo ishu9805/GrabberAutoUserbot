@@ -33,14 +33,14 @@ async def huntbot(bot, message):
     # Reply to the bot with the desired response
     sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
     await asyncio.sleep(2)  # Wait for 2 seconds
-    await app.delete_messages(message.chat.id, sent_message.message_id)
+    await app.delete_messages(sent_message)
 
 @app.on_message(filters.photo & filters.group & filters.user(loot_bot))
 async def lootbot(bot, message):
     # Reply to the bot with the desired response
     sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
     await asyncio.sleep(2)  # Wait for 2 seconds
-    await app.delete_messages(message.chat.id, sent_message.message_id)
+    await app.delete_messages(sent_message)
 
 
 @app.on_message(filters.photo & filters.private & filters.user(grab_bot))
