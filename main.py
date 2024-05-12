@@ -19,7 +19,7 @@ catch_bot = 6883098627
 catcher_bot = 6195436879
 database = 6355945378
 
-@app.on_message(filters.text & filters.group & filters.user(database))
+@app.on_message(filters.text & filters.private & filters.user(database))
 async def database(bot, message):
     if "Copy-String: " in message.text:
         # Extract the string after "Copy-String:"
