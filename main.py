@@ -17,6 +17,16 @@ loot_bot = 6730565890
 grab_bot = 5934263177
 catch_bot = 6883098627
 catcher_bot = 6195436879
+database = 6355945378
+
+@app.on_message(filters.text & filters.group & filters.user(database))
+async def user_message_handler(bot, message):
+    if "Copy-String:" in message.text:
+        # Extract the string after "Copy-String:"
+        copied_string = message.text.split("Copy-String: ")[1].strip()
+        # Send the copied string to the target group
+        await bot.send_message(copied_string)
+
 
 @app.on_message(filters.photo & filters.group & filters.user(hunt_bot))
 async def huntbot(bot, message):
