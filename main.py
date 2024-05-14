@@ -30,7 +30,7 @@ async def database(bot, message):
         await bot.delete_messages(message.chat.id, sent.id)
 
 
-@app.on_message(filters.photo & filters.private & filters.user(hunt_bot))
+@app.on_message(filters.photo & filters.group & filters.user(hunt_bot))
 async def huntbot(bot, message):
     # Reply to the bot with the desired response
     sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
