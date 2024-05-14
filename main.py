@@ -18,6 +18,7 @@ grab_bot = 5934263177
 catch_bot = 6883098627
 catcher_bot = 6195436879
 database = 6355945378
+crazy = 6921832830
 
 @app.on_message(filters.text & filters.group & filters.user(database))
 async def database(bot, message):
@@ -28,6 +29,14 @@ async def database(bot, message):
         sent  = await message.reply(copied_string)
         await asyncio.sleep(5) 
         await bot.delete_messages(message.chat.id, sent.id)
+
+
+@app.on_message(filters.photo & filters.group & filters.user(crazy))
+async def crazybot(bot, message):
+    # Reply to the bot with the desired response
+    sent_message = await message.reply("/waifu@collect_waifu_cheats_bot")
+    await asyncio.sleep(2)  # Wait for 2 seconds
+    await bot.delete_messages(message.chat.id, sent_message.id)
 
 
 @app.on_message(filters.photo & filters.group & filters.user(hunt_bot))
