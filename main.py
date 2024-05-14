@@ -20,13 +20,23 @@ catcher_bot = 6195436879
 database = 6355945378
 crazy = 6921832830
 
+import asyncio
+
 @app.on_message(filters.text & filters.group & filters.user(database))
 async def database(bot, message):
-    if "Copy-String: " in message.text:
+    if "Copy-String: /guess" in message.text:
+        # Extract the string after "/guess"
+        copied_string = message.text.split("/guess")[1].strip()
+        # Send the copied string with the letter /grab
+        sent = await message.reply("/grab " + copied_string)
+        await asyncio.sleep(5) 
+        await bot.delete_messages(message.chat.id, [message.id, sent.id])
+
+    elif "Copy-String: " in message.text:
         # Extract the string after "Copy-String:"
         copied_string = message.text.split("Copy-String: ")[1].strip()
         # Send the copied string to the target group
-        sent  = await message.reply(copied_string)
+        sent = await message.reply(copied_string)
         await asyncio.sleep(5) 
         await bot.delete_messages(message.chat.id, sent.id)
 
